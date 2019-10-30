@@ -1,5 +1,7 @@
 package com.exlhealthcare.qa.pages;
 
+import java.util.List;
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,19 +16,71 @@ public class GoogleMapsDirectionsPage extends TestBase{
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(id = "sb_ifc51")
+	@FindBy(xpath = "//input[@placeholder='Choose starting point, or click on the map...']")
 	WebElement searchFromLocationInputBox;
 	
-	@FindBy(id = "sb_ifc52")
+	@FindBy(xpath = "//div[@id='sb_ifc52']/input")
 	WebElement searchToLocationInputBox;
 	
 	@FindBy(xpath = "//div[@class='directions-travel-mode-icon directions-drive-icon']")
 	WebElement lnkTravelModeDrivingIcon;
 	
-	//Actions
+	@FindBy(xpath = "//div[@class='section-layout']/div[contains(@id,'section-directions-trip')]")
+	List<WebElement> numberOfRoutes;
+	
+	@FindBy(xpath = "//div[@id='section-directions-trip-0']//div[@class='section-directions-trip-duration delay-light']")
+	WebElement distance_miles_route1;
+	
+	@FindBy(xpath = "//div[@id='section-directions-trip-0']//div[@class='section-directions-trip-distance section-directions-trip-secondary-text']")
+	WebElement travel_time_route1;
+	
+	@FindBy(xpath = "//div[@id='section-directions-trip-0']//h1[@class='section-directions-trip-title'][1]")
+	WebElement description_route1;
+
+	@FindBy(xpath = "//div[@id='section-directions-trip-1']//div[@class='section-directions-trip-duration delay-light']")
+	WebElement distance_miles_route2;
+	
+	@FindBy(xpath = "//div[@id='section-directions-trip-1']//div[@class='section-directions-trip-distance section-directions-trip-secondary-text']")
+	WebElement travel_time_route2;
+	
+	@FindBy(xpath = "//div[@id='section-directions-trip-1']//h1[@class='section-directions-trip-title'][1]")
+	WebElement description_route2;
+	
+	
+	public List<WebElement> numberOfRoutes() {
+		return numberOfRoutes;
+	}
+	
+	public WebElement distanceMilesRoute1() {
+		return distance_miles_route1;
+	}
+	
+	public WebElement travelTimeRoute1() {
+		return travel_time_route1;
+	}
+	
+	public WebElement descriptionRoute1() {
+		return description_route1;
+	}
+	
+	public WebElement distanceMilesRoute2() {
+		return distance_miles_route2;
+	}
+	
+	public WebElement travelTimeRoute2() {
+		return travel_time_route2;
+	}
+	
+	public WebElement descriptionRoute2() {
+		return description_route2;
+	}
+	
+	
 	public void setSearchFromLocation(String searchFromLocation) {
 		Log.info("Set search From location input box");
 		searchFromLocationInputBox.sendKeys(searchFromLocation);
+//		Log.info("Press Enter key to search the directions");
+//		searchToLocationInputBox.sendKeys(Keys.ENTER);
 	}
 	
 	public void setSearchToLocation(String searchToLocation) {
