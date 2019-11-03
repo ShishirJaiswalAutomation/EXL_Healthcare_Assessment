@@ -8,10 +8,15 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 import com.exlhealthcare.qa.util.TestUtil;
 
 public class TestBase {
+	
+	public final static String userDirectory = "..\\EXLHealthcareTechnicalAssessment\\";
 	
 	public static WebDriver driver;
 	public static Properties prop;
@@ -21,7 +26,7 @@ public class TestBase {
 		try {
 			prop = new Properties();
 			FileInputStream ip; 
-			ip = new FileInputStream("E:\\\\Eclipse-Workspace\\EXLHealthcareTechnicalAssessment\\src\\main\\java\\com\\exlhealthcare\\qa\\config\\config.properties");
+			ip = new FileInputStream(userDirectory + "src\\main\\java\\com\\exlhealthcare\\qa\\config\\config.properties");
 			prop.load(ip);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -34,10 +39,14 @@ public class TestBase {
 	public static void initialization() {
 		String browserName  = prop.getProperty("browser");
 		if(browserName.equalsIgnoreCase("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "E:\\Eclipse-Workspace\\EXLHealthcareTechnicalAssessment\\ChromeDriver\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", userDirectory + "ChromeDriver\\chromedriver.exe");
 			driver = new ChromeDriver();
 		}else if (browserName.equalsIgnoreCase("firefox")) {
-			System.setProperty("webdriver.gecko.driver", "");
+			System.setProperty("webdriver.gecko.driver", userDirectory + "FirefoxDriver\\geckodriver.exe");
+			driver = new FirefoxDriver();
+		}else if (browserName.equalsIgnoreCase("IE")) {
+			System.setProperty("webdriver.ie.driver", userDirectory + "InternetExplorer\\IEDriverServer.exe");
+			driver = new InternetExplorerDriver();
 		}
 		
 		driver.manage().window().maximize();

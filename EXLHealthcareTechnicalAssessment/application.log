@@ -1,0 +1,29 @@
+2019-11-03 14:34:39,498  INFO [main] Log:15 - ****************************************************************************************
+2019-11-03 14:34:39,506  INFO [main] Log:17 - ****************************************************************************************
+2019-11-03 14:34:39,506  INFO [main] Log:19 - $$$$$$$$$$$$$$$$$$$$$                 searchGoogleMaps       $$$$$$$$$$$$$$$$$$$$$$$$$
+2019-11-03 14:34:39,506  INFO [main] Log:21 - ****************************************************************************************
+2019-11-03 14:34:39,506  INFO [main] Log:23 - ****************************************************************************************
+2019-11-03 14:34:39,507  INFO [main] Log:34 - Get the page title
+2019-11-03 14:34:41,648  INFO [main] Log:34 - Set the value of To Location to: 'San Francisco, California'
+2019-11-03 14:34:41,649  INFO [main] Log:34 - Set search location input box
+2019-11-03 14:34:43,783  INFO [main] Log:34 - Click search button
+2019-11-03 14:34:53,960  INFO [main] Log:34 - Get the current page url
+2019-11-03 14:34:54,702  INFO [main] Log:34 - Coordinates exist
+2019-11-03 14:34:54,702  INFO [main] Log:34 - Clicked Directions link
+2019-11-03 14:34:54,702  INFO [main] Log:34 - Click Directions link
+2019-11-03 14:34:55,591  INFO [main] Log:34 - Clicked travel mode icon
+2019-11-03 14:34:55,591  INFO [main] Log:34 - Click driving travel mode icon
+2019-11-03 14:34:55,741  INFO [main] Log:34 - Set the value of From Location field to: 'Chico, California'
+2019-11-03 14:34:55,742  INFO [main] Log:34 - Set search From location input box
+2019-11-03 14:34:55,995  INFO [main] Log:34 - Press Enter key to search the directions
+2019-11-03 14:34:57,997  INFO [main] Log:34 - No. of actual available routes: 3
+2019-11-03 14:34:57,997  INFO [main] Log:34 - No. of expected available routes: 3
+2019-11-03 14:34:58,702  INFO [main] Log:34 - Route1 title: via CA-99 S and I-80 W
+2019-11-03 14:34:58,734  INFO [main] Log:34 - Route1 distance: 170 miles
+2019-11-03 14:34:58,769  INFO [main] Log:34 - Route1 travel time: 2 h 42 min
+2019-11-03 14:34:58,809  INFO [main] Log:34 - Route2 title: via I-80 W
+2019-11-03 14:34:58,861  INFO [main] Log:34 - Route2 distance: 164 miles
+2019-11-03 14:34:58,949  INFO [main] Log:34 - Route2 travel time: 2 h 44 min
+2019-11-03 14:34:58,950  INFO [main] Log:34 - Storing the details in HashMap
+2019-11-03 14:34:58,950  INFO [main] Log:34 - Writing the details from HashMap to text file 'routes.txt'
+2019-11-03 14:34:58,967  INFO [main] Log:30 - XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX

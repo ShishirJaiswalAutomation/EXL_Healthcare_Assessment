@@ -19,6 +19,10 @@ public class GoogleMapsSearchPage extends TestBase{
 	@FindBy(xpath = "//div[contains(text(),'Directions')]")
 	WebElement lnkDirections;
 	
+	public WebElement lnkDirections() {
+		return lnkDirections;
+	}
+	
 	public String searchPageURL() {
 		Log.info("Get the current page url");
 		url = driver.getCurrentUrl();
@@ -27,7 +31,7 @@ public class GoogleMapsSearchPage extends TestBase{
 	
 	public void clickDirectionsLink() {
 		Log.info("Click Directions link");
-		lnkDirections.click();
+		lnkDirections().click();
 	}
 
 }

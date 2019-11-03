@@ -18,6 +18,14 @@ public class GoogleMapsHomePage extends TestBase {
 
 	@FindBy(id = "searchbox-searchbutton")
 	WebElement searchButton;
+	
+	public WebElement searchboxLocation() {
+		return searchboxLocation;
+	}
+	
+	public WebElement searchButton() {
+		return searchButton;
+	}
 
 	// Actions
 	public String validateHomePageTitle() {
@@ -27,12 +35,12 @@ public class GoogleMapsHomePage extends TestBase {
 	
 	public void setSearchLocation(String searchLocation) {
 		Log.info("Set search location input box");
-		searchboxLocation.sendKeys(searchLocation);
+		searchboxLocation().sendKeys(searchLocation);
 	}
 	
 	public void clickSearchButton() {
 		Log.info("Click search button");
-		searchButton.click();
+		searchButton().click();
 	}
 
 }

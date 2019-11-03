@@ -1,0 +1,6 @@
+Route2 Distance=164 miles
+Route1 Title=via CA-99 S and I-80 W
+Route1 Distance=170 miles
+Route2 Travel Time=2 h 44 min
+Route1 Travel Time=2 h 42 min
+Route2 Title=via I-80 W

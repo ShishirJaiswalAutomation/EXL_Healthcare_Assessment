@@ -29,23 +29,43 @@ public class GoogleMapsDirectionsPage extends TestBase{
 	List<WebElement> numberOfRoutes;
 	
 	@FindBy(xpath = "//div[@id='section-directions-trip-0']//div[@class='section-directions-trip-duration delay-light']")
-	WebElement distance_miles_route1;
+	WebElement travel_time_route1;
 	
 	@FindBy(xpath = "//div[@id='section-directions-trip-0']//div[@class='section-directions-trip-distance section-directions-trip-secondary-text']")
-	WebElement travel_time_route1;
+	WebElement distance_miles_route1;
 	
 	@FindBy(xpath = "//div[@id='section-directions-trip-0']//h1[@class='section-directions-trip-title'][1]")
 	WebElement description_route1;
 
 	@FindBy(xpath = "//div[@id='section-directions-trip-1']//div[@class='section-directions-trip-duration delay-light']")
-	WebElement distance_miles_route2;
+	WebElement travel_time_route2;
 	
 	@FindBy(xpath = "//div[@id='section-directions-trip-1']//div[@class='section-directions-trip-distance section-directions-trip-secondary-text']")
-	WebElement travel_time_route2;
+	WebElement distance_miles_route2;
 	
 	@FindBy(xpath = "//div[@id='section-directions-trip-1']//h1[@class='section-directions-trip-title'][1]")
 	WebElement description_route2;
 	
+	@FindBy(xpath = "//div[@id='section-directions-trip-2']//div[@class='section-directions-trip-duration delay-light']")
+	WebElement travel_time_route3;
+	
+	@FindBy(xpath = "//div[@id='section-directions-trip-2']//div[@class='section-directions-trip-distance section-directions-trip-secondary-text']")
+	WebElement distance_miles_route3;
+	
+	@FindBy(xpath = "//div[@id='section-directions-trip-2']//h1[@class='section-directions-trip-title'][1]")
+	WebElement description_route3;
+	
+	public WebElement linkTravelModeDrivingIcon() {
+		return lnkTravelModeDrivingIcon;
+	}
+	
+	public WebElement searchFromLocationInputBox() {
+		return searchFromLocationInputBox;
+	}
+	
+	public WebElement searchToLocationInputBox() {
+		return searchToLocationInputBox;
+	}
 	
 	public List<WebElement> numberOfRoutes() {
 		return numberOfRoutes;
@@ -75,24 +95,33 @@ public class GoogleMapsDirectionsPage extends TestBase{
 		return description_route2;
 	}
 	
+	public WebElement distanceMilesRoute3() {
+		return distance_miles_route3;
+	}
+	
+	public WebElement travelTimeRoute3() {
+		return travel_time_route3;
+	}
+	
+	public WebElement descriptionRoute3() {
+		return description_route3;
+	}
 	
 	public void setSearchFromLocation(String searchFromLocation) {
 		Log.info("Set search From location input box");
-		searchFromLocationInputBox.sendKeys(searchFromLocation);
-//		Log.info("Press Enter key to search the directions");
-//		searchToLocationInputBox.sendKeys(Keys.ENTER);
+		searchFromLocationInputBox().sendKeys(searchFromLocation);
+		Log.info("Press Enter key to search the directions");
+		searchFromLocationInputBox().sendKeys(Keys.ENTER);
 	}
 	
 	public void setSearchToLocation(String searchToLocation) {
 		Log.info("Set search To location input box");
-		searchToLocationInputBox.sendKeys(searchToLocation);
-		Log.info("Press Enter key to search the directions");
-		searchToLocationInputBox.sendKeys(Keys.ENTER);
+		searchToLocationInputBox().sendKeys(searchToLocation);
 	}
 		
 	public void clickTravelModeIcon() {
 		Log.info("Click driving travel mode icon");
-		lnkTravelModeDrivingIcon.click();
+		linkTravelModeDrivingIcon().click();
 	}
 
 }
